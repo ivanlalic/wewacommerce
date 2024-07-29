@@ -29,7 +29,7 @@ Total: €
 
 La dirección de envío es: 
 
-IMPORTANTE 
+*IMPORTANTE *
 Por favor recordar que una vez respondido este mensaje con la confirmación de la orden y dirección, IBericaStore procederá al envío que llegará entre 1 y 3 días hábiles.
 Las entregas son de Lunes a Viernes de 8 a 18 horas y se paga en dinero al repartidor al recibirlo.
 

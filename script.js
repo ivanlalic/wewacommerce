@@ -12,7 +12,21 @@ document.addEventListener("DOMContentLoaded", function () {
     messageSelect.addEventListener("change", function() {
         switch(this.value) {
             case "1":
-                messageInput.value = "Hello from IbericaStore";
+                messageInput.value = `Hola, ! 
+Nos comunicamos de IBericaStore para confirmar la orden y la dirección de entrega. 
+
+Orden 
+
+Total: € 
+
+La dirección de envío es: 
+
+IMPORTANTE 
+Por favor recordar que una vez respondido este mensaje con la confirmación de la orden y dirección, IBericaStore procederá al envío que llegará entre 1 y 3 días hábiles.
+Las entregas son de Lunes a Viernes de 8 a 18 horas y se paga en dinero al repartidor al recibirlo.
+Muchas gracias. 
+Saludos, 
+IBericaStore`;
                 break;
             case "2":
                 messageInput.value = "Hello from XimcoStore";

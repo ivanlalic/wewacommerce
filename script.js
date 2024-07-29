@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOM fully loaded and parsed");
+
     const form = document.getElementById("whatsapp-form");
     const phoneInput = document.getElementById("phone");
     const messageInput = document.getElementById("message");
@@ -8,8 +10,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const mainTitle = document.querySelector("h1");
     const footerText = document.querySelector("footer");
 
+    if (!form || !phoneInput || !messageInput || !messageSelect || !sendButton || !headerLogo || !mainTitle || !footerText) {
+        console.error("One or more elements not found");
+        return;
+    }
+
     // Add event listener for message selection
     messageSelect.addEventListener("change", function() {
+        console.log("Message selected:", this.value);
         switch(this.value) {
             case "1":
                 messageInput.value = `Hola, ! 
@@ -37,6 +45,7 @@ IBericaStore`;
     });
 
     sendButton.addEventListener("click", function () {
+        console.log("Send button clicked");
         const phoneNumber = phoneInput.value;
         const message = messageInput.value;
         if (phoneNumber) {
@@ -44,7 +53,10 @@ IBericaStore`;
             if (message) {
                 whatsappURL += `&text=${encodeURIComponent(message)}`;
             }
+            console.log("Redirecting to:", whatsappURL);
             window.location.href = whatsappURL;
+        } else {
+            console.log("Phone number is empty");
         }
     });
 
@@ -52,17 +64,22 @@ IBericaStore`;
     const usFlag = document.getElementById("us-flag");
     const esFlag = document.getElementById("es-flag");
 
-    usFlag.addEventListener("click", function (event) {
-        event.preventDefault();
-        setLanguage("en");
-    });
+    if (!usFlag || !esFlag) {
+        console.error("Language flags not found");
+    } else {
+        usFlag.addEventListener("click", function (event) {
+            event.preventDefault();
+            setLanguage("en");
+        });
 
-    esFlag.addEventListener("click", function (event) {
-        event.preventDefault();
-        setLanguage("es");
-    });
+        esFlag.addEventListener("click", function (event) {
+            event.preventDefault();
+            setLanguage("es");
+        });
+    }
 
     function setLanguage(lang) {
+        console.log("Setting language to:", lang);
         if (lang === "es") {
             headerLogo.textContent = "WhatsApp";
             mainTitle.textContent = "Envia Mensajes de WhatsApp Sin Agregar Contacto";
